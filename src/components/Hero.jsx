@@ -3,7 +3,7 @@ import Her from "../assets/img/Hero.png";
 export default function Hero() {
   return (
     <section
-      className="bg-gradient-to-r from-gray-800 to-gray-700 text-white mx-33 rounded-[20px]"
+      className="from-gray-800 to-gray-700 text-white mx-33 rounded-[20px]"
       style={{ backgroundImage: `url(${Her})` }}
     >
       <div className="max-w-5xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">

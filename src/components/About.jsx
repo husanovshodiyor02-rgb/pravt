@@ -5,21 +5,17 @@ export default function About() {
   return (
     <section className="bg-white">
       <div className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
-        
         <div className="relative">
           <img src={Im1} className="w-full rounded-lg shadow" />
 
-
-          
           <div className="flex gap-2 mt-4">
-            <span className="w-6 h-[3px] bg-red-600 rounded"></span>
-            <span className="w-6 h-[3px] bg-gray-300 rounded"></span>
-            <span className="w-6 h-[3px] bg-gray-300 rounded"></span>
-            <span className="w-6 h-[3px] bg-gray-300 rounded"></span>
+            <span className="w-6 h-0.75 bg-red-600 rounded"></span>
+            <span className="w-6 h-0.75 bg-gray-300 rounded"></span>
+            <span className="w-6 h-0.75 bg-gray-300 rounded"></span>
+            <span className="w-6 h-0.75 bg-gray-300 rounded"></span>
           </div>
         </div>
 
-        
         <div>
           <h2 className="text-3xl font-bold mb-6">О компании</h2>
 
