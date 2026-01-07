@@ -1,0 +1,72 @@
+// Type Assertion
+
+// TypeScript’ga: "men buni sendan yaxwiroq bilaman" deb aytiw.
+
+// let value: any = "Hello";
+// let length = (value as string).length;
+
+
+// let length = (<string>value).length;
+
+
+
+
+
+// unknown type
+
+// any ga oxwaydi lekin xavfsiz – iwlatiwdan oldin tekwiriw majburiy.
+
+// let data: unknown;
+
+// if (typeof data === "string") {
+//   console.log(data.toUpperCase());
+// }
+
+
+
+
+
+
+
+// Union Type (|)
+
+// Ozgaruvchi bir necta type boliwi mumkin.
+
+// let id: number | string;
+
+// id = 5;
+// id = "abc";
+
+
+
+
+
+// Literal Type
+
+// Aniq bitta qiymat bilan ceklanadi.
+
+// let status: "success" | "error";
+
+// status = "success"; // ok
+// status = "fail";    // error
+
+
+
+
+
+
+
+
+// Type Aliases (type)
+
+// Murakkab typega nom beriw.
+
+// type User = {
+//   id: number;
+//   name: string;
+// };
+
+// const user: User = {
+//   id: 1,
+//   name: "Ali",
+// };
