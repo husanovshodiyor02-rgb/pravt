@@ -3,6 +3,8 @@ import Hero from "./components/Hero";
 import Categories from "./components/Categories";
 import About from "./components/About";
 import CatalogBanner from "./components/CatalogBanner";
+import News from "./components/News";
+import InfoFooter from "./components/InfoFooter";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Categories />
       <CatalogBanner/>
       <About/>
+      <News/>
+      <InfoFooter/>
     </>
   );
 }
