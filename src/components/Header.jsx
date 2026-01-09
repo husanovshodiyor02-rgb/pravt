@@ -1,20 +1,22 @@
 import { useState } from "react";
 import Logo from "../assets/img/logo.png";
+import { NavLink } from "react-router-dom";
 
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
 
   return (
     <header className="bg-white shadow text-sm relative z-50">
-      {/* TOP BAR */}
       <div className="bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-4">
           <p className="text-gray-600 hidden md:block">
             ПРОДАЖА ЗАПАСНЫХ ЧАСТЕЙ ГАЗ, ВАЗ, УАЗ, КАМАЗ
           </p>
 
-          <div className="flex items-center gap-6 text-gray-700">
+          <div className="hidden md:flex items-center gap-6 text-gray-700">
             <p className="flex items-center gap-1">
               <svg
                 width="32"
@@ -110,9 +112,8 @@ export default function Header() {
         </div>
       </div>
 
-      {/* MAIN HEADER */}
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-between gap-4">
           <img src={Logo} className="h-12" />
 
           <button
@@ -121,18 +122,63 @@ export default function Header() {
           >
             ☰ КАТАЛОГ
           </button>
+
+          <button
+            onClick={() => setMobileOpen(true)}
+            className="lg:hidden text-2xl"
+          >
+            ☰
+          </button>
         </div>
 
         <nav className="hidden lg:flex gap-8 font-semibold">
-          <a href="#">ГЛАВНАЯ</a>
-          <a href="#">О КОМПАНИИ</a>
-          <a href="#">ПАРТНЕРАМ</a>
-          <a href="#">НОВОСТИ</a>
-          <a href="#">КОНТАКТЫ</a>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "text-red-600" : "hover:text-red-600"
+            }
+          >
+            ГЛАВНАЯ
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "text-red-600" : "hover:text-red-600"
+            }
+          >
+            О КОМПАНИИ
+          </NavLink>
+
+          <NavLink
+            to="/partners"
+            className={({ isActive }) =>
+              isActive ? "text-red-600" : "hover:text-red-600"
+            }
+          >
+            ПАРТНЕРАМ
+          </NavLink>
+
+          <NavLink
+            to="/news"
+            className={({ isActive }) =>
+              isActive ? "text-red-600" : "hover:text-red-600"
+            }
+          >
+            НОВОСТИ
+          </NavLink>
+
+          <NavLink
+            to="/contacts"
+            className={({ isActive }) =>
+              isActive ? "text-red-600" : "hover:text-red-600"
+            }
+          >
+            КОНТАКТЫ
+          </NavLink>
         </nav>
       </div>
 
-      {/* DROPDOWN */}
       {open && (
         <div className="absolute top-full left-0 w-full bg-white border-t shadow-lg">
           <div className="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 md:grid-cols-4 gap-8">
@@ -155,6 +201,37 @@ export default function Header() {
           </div>
         </div>
       )}
+      {mobileOpen && (
+        <div className="fixed inset-0 bg-black/40 z-50">
+          <div className="bg-white w-72 h-full p-6 relative">
+          
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="absolute top-4 right-4 text-2xl"
+            >
+              ✕
+            </button>
+
+            <nav className="flex flex-col gap-6 font-semibold mt-10">
+              <MobileLink to="/" setMobileOpen={setMobileOpen}>
+                ГЛАВНАЯ
+              </MobileLink>
+              <MobileLink to="/about" setMobileOpen={setMobileOpen}>
+                О КОМПАНИИ
+              </MobileLink>
+              <MobileLink to="/partners" setMobileOpen={setMobileOpen}>
+                ПАРТНЕРАМ
+              </MobileLink>
+              <MobileLink to="/news" setMobileOpen={setMobileOpen}>
+                НОВОСТИ
+              </MobileLink>
+              <MobileLink to="/contacts" setMobileOpen={setMobileOpen}>
+                КОНТАКТЫ
+              </MobileLink>
+            </nav>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
@@ -171,5 +248,18 @@ function Menu({ title, items }) {
         ))}
       </ul>
     </div>
+  );
+}
+function MobileLink({ to, children, setMobileOpen }) {
+  return (
+    <NavLink
+      to={to}
+      onClick={() => setMobileOpen(false)}
+      className={({ isActive }) =>
+        `text-lg ${isActive ? "text-red-600" : "hover:text-red-600"}`
+      }
+    >
+      {children}
+    </NavLink>
   );
 }

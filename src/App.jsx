@@ -1,21 +1,27 @@
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Categories from "./components/Categories";
-import About from "./components/About";
-import CatalogBanner from "./components/CatalogBanner";
-import News from "./components/News";
 import InfoFooter from "./components/InfoFooter";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import News from "./pages/News";
+import Contacts from "./pages/Contacts";
+import Partners from "./pages/Partners";
 
 function App() {
   return (
     <>
       <Header />
-      <Hero />
-      <Categories />
-      <CatalogBanner/>
-      <About/>
-      <News/>
-      <InfoFooter/>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/partners" element={<Partners />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/contacts" element={<Contacts />} />
+      </Routes>
+
+      <InfoFooter />
     </>
   );
 }

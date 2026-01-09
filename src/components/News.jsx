@@ -13,9 +13,9 @@ export default function News() {
     <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-4">
       
-        <div className="flex overflow-x-auto gap-6 mb-10 justify-center md:justify-between">
+        <div className="flex overflow-x-auto gap-8 mb-10">
           {[Av1, Av2, Av3, Av4, Av5].map((i, idx) => (
-            <img key={idx} src={i} className="h-14 opacity-80" />
+            <img key={idx} src={i} className="h-20 opacity-80" />
           ))}
         </div>
 

@@ -177,7 +177,7 @@ export default function InfoFooter() {
           <div>
             <p className="font-semibold mb-2">Контакты</p>
             <p className="flex items-center gap-2">
-              <div>
+              <span>
                 <svg
                   width="32"
                   height="32"
@@ -193,11 +193,11 @@ export default function InfoFooter() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </div>{" "}
+              </span>
               7 (831) 418-58-57
             </p>
             <p className="flex items-center gap-2 my-4">
-              <div>
+              <span>
                 <svg
                   width="32"
                   height="32"
@@ -220,11 +220,11 @@ export default function InfoFooter() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </div>{" "}
+              </span>{" "}
               8:30 – 16:30 (Сб, Вс – выходной)
             </p>
             <p className="flex items-center gap-2">
-              <div>
+              <span>
                 <svg
                   width="29"
                   height="35"
@@ -247,7 +247,7 @@ export default function InfoFooter() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </div>{" "}
+              </span>{" "}
               г. Нижний Новгород
             </p>
           </div>

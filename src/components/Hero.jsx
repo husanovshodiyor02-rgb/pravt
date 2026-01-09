@@ -3,10 +3,10 @@ import Her from "../assets/img/hero.png";
 export default function Hero() {
   return (
     <section
-      className="from-gray-800 to-gray-700 text-white mx-33 rounded-[20px]"
+      className="from-gray-800 to-gray-700 text-white rounded-[20px] w-full h-100 bg-cover"
       style={{ backgroundImage: `url(${Her})` }}
     >
-      <div className="max-w-5xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
         <div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Автозапчасти</h1>
           <p className="text-xl mb-6">
@@ -16,8 +16,6 @@ export default function Hero() {
             Перейти →
           </button>
         </div>
-
-        
       </div>
     </section>
   );
